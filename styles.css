@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    background-color: black;
+    color: #33ff33;
+    font-family: 'Share Tech Mono', monospace;
+    padding: 20px;
+}
+
+#sidebar {
+    width: 200px;
+    margin-right: 20px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    margin: 10px 0;
+}
+
+#sidebar ul li a {
+    color: #33ff33;
+    text-decoration: none;
+}
+
+#terminal {
+    max-width: 800px;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+input {
+    background: none;
+    border: none;
+    color: #33ff33;
+    font-size: 1.2em;
+    font-family: 'Share Tech Mono', monospace;
+    outline: none;
+    width: 80%;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.glitch {
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px 0 red; }
+    25% { text-shadow: -2px -2px 0 lime; }
+    50% { text-shadow: 2px -2px 0 blue; }
+    75% { text-shadow: -2px 2px 0 yellow; }
+    100% { text-shadow: 2px 2px 0 red; }
+}
