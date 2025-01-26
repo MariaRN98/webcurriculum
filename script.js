@@ -1,85 +1,3 @@
-// document.getElementById('command').addEventListener('keypress', function(event) {
-//     if (event.key === 'Enter') {
-//         processCommand(this.value.toLowerCase());
-//         this.value = '';
-//     }
-// });
-
-// function processCommand(input) {
-//     let output = document.getElementById('output');
-
-//     if (input === 'help') {
-//         output.innerHTML += '<p>Comandos disponibles: about, projects, contact, workex, education, hskills</p>';
-    
-//     } else if (input === 'about') {
-//         output.innerHTML += 
-//         '<p>Sobre mí: Desarrollador apasionado por...</p>';
-    
-//     } else if (input === 'projects') {
-//         output.innerHTML += 
-//         '<p>Mis proyectos: <a href="https://github.com/MariaRN98\" target="_blank">GitHub</a></p>';
-    
-//     } else if (input === 'contact') {
-//         output.innerHTML += 
-//         '<p>Contacto: mrojanonoval@gmail.com</p>';
-    
-//     } else if (input === 'workex') {
-//         output.innerHTML += 
-//         '<p>$ (workex) Experiencia laboral:</p>' +
-//         '<br>' +
-//         '<p>Programador en prácticas</p>' +
-//         '<p>Fujitsu Technology Solutions S.A. | Marzo 2023 - Diciembre 2023</p>' +
-//         '<p>- Implementar diferentes funcionalidades en la aplicación. </p>' +
-//         '<p>- Migración de base de datos.</p>' +
-//         '<p>- Mapeo de archivos XML y el posterior guardado de sus datos.</p>' +
-//         '<p>- Testing con JUnit y Mockito. </p>' +
-//         '<p>- Uso del modelo Gitflow.</p>' +
-//         '<p>- Método de trabajo Scrum.</p>' +
-//         '<p>- Creación y organización de un proyecto CRUD</p>';
-    
-//     } else if (input === 'education') {
-//         output.innerHTML += 
-//         '<p>$ (education) Experiencia laboral:</p>' +
-//         '<p>estudios</p>';
-    
-//     } else if (input === 'hskills') {
-//         output.innerHTML += 
-//         '<p>conocimientos</p>';
-    
-//     } else {
-//         output.innerHTML += `<p>Comando no reconocido: ${input}</p>`;
-//     }
-//     output.scrollTop = output.scrollHeight;
-// }
-
-// document.querySelectorAll('#sidebar a').forEach(item => {
-//     item.addEventListener('click', function(event) {
-//         event.preventDefault();
-//         let command = this.getAttribute('data-command');
-//         processCommand(command);
-//     });
-// });
-
-
-
-
-document.getElementById('command').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        processCommand(this.value.toLowerCase());
-        this.value = '';
-    }
-});
-
-function printWithDelay(output, textArray, index = 0) {
-    if (index < textArray.length) {
-        let p = document.createElement('p');
-        p.innerHTML = textArray[index];
-        output.appendChild(p);
-        output.scrollTop = output.scrollHeight;
-        setTimeout(() => printWithDelay(output, textArray, index + 1), 100); // Retardo de 100ms
-    }
-}
-
 function processCommand(input) {
     let output = document.getElementById('output');
 
@@ -88,13 +6,20 @@ function processCommand(input) {
             'Comandos disponibles: about, projects, contact, workex, education, hskills'
         ],
         about: [
-            'Sobre mí: Desarrollador apasionado por...'
+            '<br>',
+            '$ (about) Sobre mí:',
         ],
         projects: [
-            'Mis proyectos: <a href="https://github.com/MariaRN98" target="_blank">GitHub</a>'
+            '<br>',
+            '$ (projects) Proyectos:',
+            '<a href="https://github.com/MariaRN98" target="_blank">GitHub</a>'
         ],
         contact: [
-            'Contacto: mrojanonoval@gmail.com'
+            '<br>',
+            '$ (contact) Datos de contacto:',
+            'Email: mrojanonoval@gmail.com',
+            'Teléfono: 684 32 02 92',
+            'Dirección: C/ San Vicente de Paul, Sevilla, 41010'
         ],
         workex: [
             '<br>',
@@ -110,22 +35,69 @@ function processCommand(input) {
             '- Creación y organización de un proyecto CRUD.'
         ],
         education: [
-            '$ (education) Experiencia académica:',
-            'Título en Desarrollo de Aplicaciones Multiplataforma.'
+            '<br>',
+            '$ (education) Formación académica:',
+            'Técnico superior en desarrollo de aplicaciones web.',
+            'I.E.S. Hermanos Machado | Actualidad',
+            '<br>',
+            'Técnico superior en desarrollo de aplicaciones multiplataforma.',
+            'C.D.P. Santa Joaquina de Vedruna | 2023',
+            '<br>',
+            'Bachillerato de Humanidades y Ciencias Sociales.',
+            'I.E.S. Pablo Picasso | 2019'
         ],
         hskills: [
-            'Habilidades técnicas: HTML, CSS, JavaScript, Java, Spring Boot, SQL, Git, Scrum.'
+            '<br>',
+            '$ (hskills) Conocimientos:',
+            '+----------------------------+------------------------+----------------+----------------------------+',
+            '| Lenguajes de programación  | Frameworks y librerías | Bases de datos | Herramientas de desarrollo |',
+            '+----------------------------+------------------------+----------------+----------------------------+',
+            '| Java                       | Spring Boot            | MySQL          | Git                        |',
+            '| JavaScript                 | Angular                | SQL            | IntelliJ IDEA              |',
+            '| Python                     |                        |                | Visual Studio Code         |',
+            '| C#                         |                        |                | Unity                      |',
+            '| HTML/CSS                   |                        |                | Android Studio             |',
+            '|                            |                        |                | Docker                     |',
+            '|                            |                        |                |                            |',
+            '+----------------------------+------------------------+----------------+----------------------------+',
         ]
     };
 
-    output.innerHTML += `<p>$ ${input}</p>`;  // Mostrar el comando introducido
+    input = input.trim().toLowerCase();
+    output.innerHTML += `<p>$ ${input}</p>`; // Mostrar el comando introducido
 
     if (commandResponses[input]) {
-        printWithDelay(output, commandResponses[input]);
+        commandResponses[input].forEach(line => {
+            const pre = document.createElement('pre');
+            pre.innerHTML = line;
+            output.appendChild(pre);
+        });
     } else {
-        printWithDelay(output, [`Comando no reconocido: ${input}`]);
+        const pre = document.createElement('pre');
+        pre.innerHTML = `Comando no reconocido: ${input}`;
+        output.appendChild(pre);
     }
+
+    scrollPageToBottom();  // Llamamos a la función para mantener el scroll abajo
 }
+
+
+// Función para mantener el scroll de la página hacia abajo
+function scrollPageToBottom() {
+    setTimeout(() => {
+        // Asegúrate de que estamos desplazando todo el contenido de la página
+        window.scrollTo({
+            top: document.documentElement.scrollHeight,  // Desplazamiento hasta el final del contenido
+        });
+    }, 100);  // Le damos un pequeño retraso para que el DOM se actualice antes del desplazamiento
+}
+
+document.getElementById('command').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        processCommand(this.value.toLowerCase());
+        this.value = '';
+    }
+});
 
 document.querySelectorAll('#sidebar a').forEach(item => {
     item.addEventListener('click', function(event) {
