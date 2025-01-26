@@ -10,6 +10,7 @@ body {
     position: fixed;
     width: 200px;
     margin-right: 20px;
+    margin-top: 70px;
 }
 
 #sidebar ul {

@@ -3,54 +3,54 @@ function processCommand(input) {
 
     let commandResponses = {
         help: [
-            'Comandos disponibles: about, projects, contact, workex, education, hskills'
+            'Available commands: about, projects, contact, workex, education, hskills'
         ],
         about: [
             '<br>',
-            '$ (about) Sobre mí:',
+            '$ (about) About me:',
         ],
         projects: [
             '<br>',
-            '$ (projects) Proyectos:',
+            '$ (projects) Projects:',
             '<a href="https://github.com/MariaRN98" target="_blank">GitHub</a>'
         ],
         contact: [
             '<br>',
-            '$ (contact) Datos de contacto:',
+            '$ (contact) Contact details:',
             'Email: mrojanonoval@gmail.com',
-            'Teléfono: 684 32 02 92',
-            'Dirección: C/ San Vicente de Paul, Sevilla, 41010'
+            'Phone: 684 32 02 92',
+            'Address: C/ San Vicente de Paul, Sevilla, 41010'
         ],
         workex: [
             '<br>',
-            '$ (workex) Experiencia laboral:',
-            'Programador en prácticas',
-            'Fujitsu Technology Solutions S.A. | Marzo 2023 - Diciembre 2023',
-            '- Implementar diferentes funcionalidades en la aplicación.',
-            '- Migración de base de datos.',
-            '- Mapeo de archivos XML y el posterior guardado de sus datos.',
-            '- Testing con JUnit y Mockito.',
-            '- Uso del modelo Gitflow.',
-            '- Método de trabajo Scrum.',
-            '- Creación y organización de un proyecto CRUD.'
+            '$ (workex) Work experience:',
+            'Intern Programmer',
+            'Fujitsu Technology Solutions S.A. | March 2023 - December 2023',
+            '- Implementing various functionalities in the application.',
+            '- Database migration.',
+            '- XML file mapping and subsequent data storage.',
+            '- Testing with JUnit and Mockito.',
+            '- Using the Gitflow model.',
+            '- Scrum work methodology.',
+            '- Creation and organization of a CRUD project.'
         ],
         education: [
             '<br>',
-            '$ (education) Formación académica:',
-            'Técnico superior en desarrollo de aplicaciones web.',
-            'I.E.S. Hermanos Machado | Actualidad',
+            '$ (education) Academic background:',
+            'Higher Technician in Web Application Development.',
+            'I.E.S. Hermanos Machado | Present',
             '<br>',
-            'Técnico superior en desarrollo de aplicaciones multiplataforma.',
+            'Higher Technician in Multiplatform Application Development.',
             'C.D.P. Santa Joaquina de Vedruna | 2023',
             '<br>',
-            'Bachillerato de Humanidades y Ciencias Sociales.',
+            'High School Diploma in Humanities and Social Sciences.',
             'I.E.S. Pablo Picasso | 2019'
         ],
         hskills: [
             '<br>',
-            '$ (hskills) Conocimientos:',
+            '$ (hskills) Hard skills:',
             '+----------------------------+------------------------+----------------+----------------------------+',
-            '| Lenguajes de programación  | Frameworks y librerías | Bases de datos | Herramientas de desarrollo |',
+            '| Programming languages      | Frameworks & Libraries | Databases      | Development Tools          |',
             '+----------------------------+------------------------+----------------+----------------------------+',
             '| Java                       | Spring Boot            | MySQL          | Git                        |',
             '| JavaScript                 | Angular                | SQL            | IntelliJ IDEA              |',
