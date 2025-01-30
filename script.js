@@ -1,6 +1,8 @@
+// Función que procesa los comandos introducidos por el usuario
 function processCommand(input) {
-    let output = document.getElementById('output');
+    let output = document.getElementById('output'); // Obtiene el contenedor donde se mostrarán las respuestas
 
+    // Diccionario de respuestas para cada comando disponible
     let commandResponses = {
         help: [
             'Comandos disponibles: about, projects, contact, workex, education, hskills'
@@ -74,44 +76,52 @@ function processCommand(input) {
         ]
     };
 
+    // Limpiamos espacios en blanco y convertimos la entrada a minúsculas
     input = input.trim().toLowerCase();
-    output.innerHTML += `<br><p>$ ${input}</p>`; // Mostrar el comando introducido
 
+    // Mostramos el comando ingresado en pantalla
+    output.innerHTML += `<br><p>$ ${input}</p>`;
+
+    // Si el comando existe en la lista, mostramos la respuesta correspondiente
     if (commandResponses[input]) {
         commandResponses[input].forEach(line => {
-            const pre = document.createElement('pre');
+            const pre = document.createElement('pre'); // Creamos un elemento <pre> para mostrar texto formateado
             pre.innerHTML = line;
             output.appendChild(pre);
         });
     } else {
+        // Si el comando no es reconocido, mostramos un mensaje de error
         const pre = document.createElement('pre');
         pre.innerHTML = `Comando no reconocido: ${input}`;
         output.appendChild(pre);
     }
 
+    // Llamamos a la función para hacer scroll automático al final
     scrollPageToBottom();  
 }
 
-// mantener el scroll abajo
+// Función para mantener el scroll siempre en la parte inferior de la pantalla
 function scrollPageToBottom() {
     setTimeout(() => {
         window.scrollTo({
-            top: document.documentElement.scrollHeight,  
+            top: document.documentElement.scrollHeight,  // Nos movemos hasta la parte inferior de la página
         });
-    }, 100);  
+    }, 100);  // Pequeño retraso para asegurar que el nuevo contenido ha sido renderizado
 }
 
+// Captura el evento de presionar tecla en el campo de entrada
 document.getElementById('command').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        processCommand(this.value.toLowerCase());
-        this.value = '';
+    if (event.key === 'Enter') { // Si el usuario presiona "Enter"
+        processCommand(this.value.toLowerCase()); // Procesamos el comando ingresado
+        this.value = ''; // Limpiamos el campo de entrada
     }
 });
 
+// Agrega funcionalidad a los enlaces del menú lateral para ejecutar los mismos comandos
 document.querySelectorAll('#sidebar a').forEach(item => {
     item.addEventListener('click', function(event) {
-        event.preventDefault();
-        let command = this.getAttribute('data-command');
-        processCommand(command);
+        event.preventDefault(); // Prevenimos el comportamiento por defecto del enlace
+        let command = this.getAttribute('data-command'); // Obtenemos el comando asociado al enlace
+        processCommand(command); // Ejecutamos el comando
     });
 });

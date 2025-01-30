@@ -27,6 +27,11 @@ body {
     text-decoration: none;
 }
 
+#sidebar ul li a:hover {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
 #terminal {
     max-width: 1000px;
     margin: 0 auto;
@@ -54,6 +59,15 @@ pre {
     font-size: 1em;
     font-family: 'Share Tech Mono', monospace;
     margin: 5px 0;
+}
+
+a {
+    color: #00ff00;
+}
+
+a:hover {
+    color: #ffcc00;
+    text-decoration: underline; 
 }
 
 
