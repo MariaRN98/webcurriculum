@@ -7,23 +7,34 @@ function processCommand(input) {
         ],
         about: [
             '<br>',
-            '$ (about) Sobre mí:',
+            '$ <b>Sobre mí:</b>',
+            'Desarrolladora con formación en Desarrollo de Aplicaciones Web',
+            'y Desarrollo de Aplicaciones Multiplataforma. Cuento con experiencia ',
+            'en programación, durante la cual he adquirido habilidades en diversas ',
+            'tecnologías como Java, Angular y especialmente Python, así como en',
+            'metodologías ágiles como Scrum. Aunque aún estoy explorando mi ',
+            'especialización, tengo una gran motivación por seguir aprendiendo y',
+            'creciendo profesionalmente. Me entusiasma enfrentar nuevos desafíos y',
+            'mejorar mis conocimientos para contribuir de manera efectiva en',
+            'proyectos innovadores.',
         ],
         projects: [
             '<br>',
-            '$ (projects) Proyectos:',
-            '<a href="https://github.com/MariaRN98" target="_blank">GitHub</a>'
+            '$ <b>Proyectos:</b>',
+            '<a href="https://mariarn98.github.io/quest/" target="_blank">Agencia de Detective Quest</a>',
+            '<a href="https://mariarn98.github.io/mercajoja/index.html" target="_blank">Supermercados Mercajoja</a>',
+            '<a href="https://mariarn98.github.io/club-de-literatura-digital/index" target="_blank">Blog de Literatura Digital</a>'
         ],
         contact: [
             '<br>',
-            '$ (contact) Datos de contacto:',
+            '$ <b>Datos de contacto:</b>',
             'Email: mrojanonoval@gmail.com',
             'Teléfono: 684 32 02 92',
             'Dirección: C/ San Vicente de Paul, Sevilla, 41010'
         ],
         workex: [
             '<br>',
-            '$ (workex) Experiencia laboral:',
+            '$ <b>Experiencia laboral:</b>',
             'Programador en prácticas',
             'Fujitsu Technology Solutions S.A. | Marzo 2023 - Diciembre 2023',
             '- Implementar diferentes funcionalidades en la aplicación.',
@@ -36,7 +47,7 @@ function processCommand(input) {
         ],
         education: [
             '<br>',
-            '$ (education) Formación académica:',
+            '$ <b>Formación académica:</b>',
             'Técnico superior en desarrollo de aplicaciones web.',
             'I.E.S. Hermanos Machado | Actualidad',
             '<br>',
@@ -48,7 +59,7 @@ function processCommand(input) {
         ],
         hskills: [
             '<br>',
-            '$ (hskills) Conocimientos:',
+            '$ <b>Conocimientos:</b>',
             '+----------------------------+------------------------+----------------+----------------------------+',
             '| Lenguajes de programación  | Frameworks y librerías | Bases de datos | Herramientas de desarrollo |',
             '+----------------------------+------------------------+----------------+----------------------------+',
@@ -64,7 +75,7 @@ function processCommand(input) {
     };
 
     input = input.trim().toLowerCase();
-    output.innerHTML += `<p>$ ${input}</p>`; // Mostrar el comando introducido
+    output.innerHTML += `<br><p>$ ${input}</p>`; // Mostrar el comando introducido
 
     if (commandResponses[input]) {
         commandResponses[input].forEach(line => {
@@ -78,17 +89,16 @@ function processCommand(input) {
         output.appendChild(pre);
     }
 
-    scrollPageToBottom();  // Llamamos a la función para mantener el scroll abajo
+    scrollPageToBottom();  
 }
 
-// Función para mantener el scroll de la página hacia abajo
+// mantener el scroll abajo
 function scrollPageToBottom() {
     setTimeout(() => {
-        // Asegúrate de que estamos desplazando todo el contenido de la página
         window.scrollTo({
-            top: document.documentElement.scrollHeight,  // Desplazamiento hasta el final del contenido
+            top: document.documentElement.scrollHeight,  
         });
-    }, 100);  // Le damos un pequeño retraso para que el DOM se actualice antes del desplazamiento
+    }, 100);  
 }
 
 document.getElementById('command').addEventListener('keypress', function(event) {

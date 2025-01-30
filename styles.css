@@ -33,8 +33,6 @@ body {
     flex-grow: 1;
     margin-left: 270px;
     margin-right: 50px; 
-
-    
 }
 
 input {
@@ -58,16 +56,5 @@ pre {
     margin: 5px 0;
 }
 
-.glitch {
-    animation: glitch 0.3s infinite;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 2px 2px 0 red; }
-    25% { text-shadow: -2px -2px 0 lime; }
-    50% { text-shadow: 2px -2px 0 blue; }
-    75% { text-shadow: -2px 2px 0 yellow; }
-    100% { text-shadow: 2px 2px 0 red; }
-}
 
 

@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>curriculum web</title>
+    <title>Portfolio Maria Rojano Noval</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
         <!-- Selector de idioma -->
-        <div id="language-selector">
+        <div id="language-selector" style="display: flex; gap: 10px; position: fixed;">
             <a href="index.html">
-                <img src="trad.png" alt="Cambiar idioma" style="width: 30px; height: 30px; position: fixed;" >
+            <img src="trad.png" alt="Cambiar idioma" style="width: 30px; height: 30px;" >
+            </a>
+            <a href="https://github.com/MariaRN98">
+            <img src="github.png" alt="GitHub" style="width: 30px; height: 30px;" >
             </a>
         </div>
     
@@ -23,27 +26,22 @@
             <li><a href="#" data-command="projects">Projects</a></li>
             <li><a href="#" data-command="contact">Contact</a></li>
             <li><a href="#" data-command="workex">Work experience</a></li>
-            <li><a href="#" data-command="education">Formacion Académica</a></li>
+            <li><a href="#" data-command="education">Education</a></li>
             <li><a href="#" data-command="hskills">Hards skills</a></li>
         </ul>
     </div>
     
     <div id="terminal">
-        <pre id="ascii-title">
-            ______                _            __                                                        
-           / ____/_  ____________(_)______  __/ /_  ______ ___                                           
-          / /   / / / / ___/ ___/ / ___/ / / / / / / / __ `__ \                                          
-         / /___/ /_/ / /  / /  / / /__/ /_/ / / /_/ / / / / / /                                          
-         \____/\__,_/_/  /_/  /_/\___/\__,_/_/\__,_/_/ /_/ /_/                                           
-             __  ___           _          ____          _                      _   __                 __
-            /  |/  /___ ______(_)___ _   / __ \____    (_)___ _____  ____     / | / /___ _   ______ _/ /
+        <pre id="ascii-title">                                          
+             __  ___           __         ____          _                      _   __                 __
+            /  |/  /___ ______/_/___ _   / __ \____    (_)___ _____  ____     / | / /___ _   ______ _/ /
            / /|_/ / __ `/ ___/ / __ `/  / /_/ / __ \  / / __ `/ __ \/ __ \   /  |/ / __ \ | / / __ `/ / 
           / /  / / /_/ / /  / / /_/ /  / _, _/ /_/ / / / /_/ / / / / /_/ /  / /|  / /_/ / |/ / /_/ / /  
          /_/  /_/\__,_/_/  /_/\__,_/  /_/ |_|\____/_/ /\__,_/_/ /_/\____/  /_/ |_/\____/|___/\__,_/_/   
                                                  /___/   
         </pre>
-        <p>$ Welcome to my profesional portfolio</p>
-        <p>$ Escribe "help" para ver las opciones disponibles</p>
+        <p>$ Welcome to my professional portfolio</p>
+        <p>$ Type "help" to see the available options</p>
         <div id="output"></div>
         <span>$ </span><input type="text" id="command" autofocus>
     </div>

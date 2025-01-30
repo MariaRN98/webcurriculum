@@ -7,23 +7,34 @@ function processCommand(input) {
         ],
         about: [
             '<br>',
-            '$ (about) About me:',
+            '$ <b>About Me:</b>',
+            'Developer with training in Web Application Development',
+            'and Multiplatform Application Development. I have experience',
+            'in programming, during which I have acquired skills in various',
+            'technologies such as Java, Angular, and especially Python, as well as',
+            'agile methodologies like Scrum. Although I am still exploring my',
+            'specialization, I have great motivation to keep learning and',
+            'growing professionally. I am excited to take on new challenges and',
+            'enhance my knowledge to contribute effectively to',
+            'innovative projects.',
         ],
         projects: [
             '<br>',
-            '$ (projects) Projects:',
-            '<a href="https://github.com/MariaRN98" target="_blank">GitHub</a>'
+            '$ <b>Projects:</b>',
+            '<a href="https://mariarn98.github.io/quest/" target="_blank">Quest Detective Agency</a>',
+            '<a href="https://mariarn98.github.io/mercajoja/index.html" target="_blank">Mercajoja Supermarkets</a>',
+            '<a href="https://mariarn98.github.io/club-de-literatura-digital/index" target="_blank">Digital Literature Blog</a>'
         ],
         contact: [
             '<br>',
-            '$ (contact) Contact details:',
+            '$ <b>Contact details:</b>',
             'Email: mrojanonoval@gmail.com',
             'Phone: 684 32 02 92',
             'Address: C/ San Vicente de Paul, Sevilla, 41010'
         ],
         workex: [
             '<br>',
-            '$ (workex) Work experience:',
+            '$ <b>Work experience:</b>',
             'Intern Programmer',
             'Fujitsu Technology Solutions S.A. | March 2023 - December 2023',
             '- Implementing various functionalities in the application.',
@@ -36,7 +47,7 @@ function processCommand(input) {
         ],
         education: [
             '<br>',
-            '$ (education) Academic background:',
+            '$ <b>Education:</b>',
             'Higher Technician in Web Application Development.',
             'I.E.S. Hermanos Machado | Present',
             '<br>',
@@ -48,7 +59,7 @@ function processCommand(input) {
         ],
         hskills: [
             '<br>',
-            '$ (hskills) Hard skills:',
+            '$ <b>Hard skills:</b>',
             '+----------------------------+------------------------+----------------+----------------------------+',
             '| Programming languages      | Frameworks & Libraries | Databases      | Development Tools          |',
             '+----------------------------+------------------------+----------------+----------------------------+',
@@ -64,7 +75,7 @@ function processCommand(input) {
     };
 
     input = input.trim().toLowerCase();
-    output.innerHTML += `<p>$ ${input}</p>`; // Mostrar el comando introducido
+    output.innerHTML += `<br><p>$ ${input}</p>`; // Mostrar el comando introducido
 
     if (commandResponses[input]) {
         commandResponses[input].forEach(line => {
